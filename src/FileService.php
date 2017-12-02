@@ -1,5 +1,5 @@
 <?php 
-namespace \PhpFileService;
+namespace PhpFileService;
 
 class FileService
 {
