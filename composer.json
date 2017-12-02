@@ -3,5 +3,10 @@
     "description": "simple file storage thing",
     "type": "library",
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PhpFileService\\": "src/"
+        }
+    },
     "require": {}
 }
