@@ -1,0 +1,7 @@
+{
+    "name": "tobias74/php-file-service",
+    "description": "simple file storage thing",
+    "type": "library",
+    "license": "MIT",
+    "require": {}
+}
