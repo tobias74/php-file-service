@@ -72,25 +72,6 @@ class FileService
     return $entiyFileName;    
 	}
 
-	
-  public function getFileResource($itemPath)
-  {
-    $fileName = $this->getAbsoluteFilePath($itemPath);
-    if (!file_exists($fileName))
-    {
-      throw new \Exception('could not find the file wanted in fileservice: '.$fileName); 
-    }
-    if (filesize($fileName) === 0)
-    {
-      throw new \Exception('this file has no contents: '.$fileName); 
-    }
-    
-    $handle = fopen($fileName, 'rb');
-    return $handle;
-    
-  }
-	
-
   public function deleteFile($itemPath)
   {
     $absoluteFileName = $this->getAbsoluteFilePath($itemPath);
