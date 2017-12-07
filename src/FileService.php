@@ -14,7 +14,7 @@ class FileService
 
   public function getAbsoluteFilePath($path)
   {
-    return $this->storagePath.'/'.$path;
+    return $this->storagePath.$path;
   }
 
   public function setShardPath($path)
