@@ -63,8 +63,12 @@ class FileService
     
     if (file_exists($uniqueFileName))
     {
-      error_log($uniqueFileName);
-      throw new \ErrorException("we did not get a unique filename. thats not so good.");
+      throw new \ErrorException("we did not get a unique filename. thats not so good: ".$uniqueFileName);
+    }
+
+    if (!file_exists($sourceFilePath))
+    {
+      throw new \ErrorException("the file to store does not exist: ".$sourceFilePath);
     }
     
     if (!copy($sourceFilePath, $uniqueFileName))
