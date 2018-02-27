@@ -52,9 +52,12 @@ class FileService
         mkdir(dirname($uniqueFileName), 0777, true);
       }
       catch (\ErrorException $e){
-        // it's probably ok. just a race-condition, someone else created this folder already.
-        // in case you have no write-access, you wont know until you check.
-        // maybe we can refine this later.
+        if (strpos($e->getMessage(), 'Permission denied') !== false){
+          throw new \ErrorException('Permission denied while creating the folder '.dirname($uniqueFileName));
+        }
+        else {
+          // it's probably ok. just a race-condition, someone else created this folder already.
+        }
       }
     }
     
